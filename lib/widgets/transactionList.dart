@@ -82,57 +82,6 @@ class TransactionList extends StatelessWidget {
                             )),
                       )),
                 );
-                // Container(
-                //   child: Card(
-                //     child: Container(
-                //       child: Row(
-                //         children: [
-                //           Container(
-                //             child: Text(
-                //               "₹ ${obj.transactionAmt}",
-                //               style: TextStyle(
-                //                   fontWeight: FontWeight.bold,
-                //                   color: Theme.of(context).primaryColor),
-                //             ),
-                //             decoration: BoxDecoration(
-                //                 border: Border.all(
-                //               color: Theme.of(context).primaryColor,
-                //               width: 1,
-                //             )),
-                //             padding: EdgeInsets.all(10),
-                //           ),
-                //           Container(
-                //             child: Column(
-                //               children: [
-                //                 Text(obj.transactionTitle,
-                //                     style: TextStyle(
-                //                         color: Colors.black,
-                //                         fontSize: 17,
-                //                         fontWeight: FontWeight.w600)),
-                //                 Text(
-                //                   "${obj.transactionDate.toString().split(" ")[0].split("-").reversed.join("-")}",
-                //                   style: TextStyle(
-                //                     color: Colors.grey,
-                //                     fontWeight: FontWeight.w100,
-                //                   ),
-                //                 ),
-                //               ],
-                //               crossAxisAlignment: CrossAxisAlignment.start,
-                //             ),
-                //             margin: EdgeInsets.only(left: 10, right: 10),
-                //           ),
-                //         ],
-                //       ),
-                //       margin: EdgeInsets.all(5),
-                //       width: double.infinity,
-                //       decoration: BoxDecoration(
-                //           border: Border(
-                //               right: BorderSide(
-                //                   color: Theme.of(context).primaryColor,
-                //                   width: 2))),
-                //     ),
-                //   ),
-                // )
               },
               itemCount: _transactions.length,
             )
@@ -156,7 +105,7 @@ class TransactionList extends StatelessWidget {
               ],
             )),
       width: double.infinity,
-      height: 300,
+      height: MediaQuery.of(context).size.height * 0.6,
       margin: EdgeInsets.all(10),
       alignment: Alignment.topLeft,
     );

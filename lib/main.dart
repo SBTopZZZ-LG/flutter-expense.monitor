@@ -15,23 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final List<Transaction> _transactions = [
-    // Transaction(
-    //     id: "0",
-    //     transactionTitle: "New Shoes",
-    //     transactionAmt: 699,
-    //     transactionDate: DateTime.now()),
-    // Transaction(
-    //     id: "1",
-    //     transactionTitle: "Food",
-    //     transactionAmt: 250,
-    //     transactionDate: DateTime.now()),
-    // Transaction(
-    //     id: "2",
-    //     transactionTitle: "Fueling",
-    //     transactionAmt: 2000.50,
-    //     transactionDate: DateTime.now()),
-  ];
+  final List<Transaction> _transactions = [];
 
   String randomString({int length = 10}) {
     String allowedChars =
@@ -89,25 +73,13 @@ class _MyAppState extends State<MyApp> {
           ),
           body: Column(
             children: [
-              // Card(
-              //   child: Container(
-              //     child: Text("Chart"),
-              //     width: double.infinity,
-              //     height: 150,
-              //     margin: EdgeInsets.all(10),
-              //     alignment: Alignment.topCenter,
-              //   ),
-              //   elevation: 5,
-              //   margin: EdgeInsets.all(10),
-              // ),
               Chart(_transactions.where((Transaction element) {
                 return element.transactionDate
                     .isAfter(DateTime.now().subtract(Duration(
                   days: 7,
                 )));
               }).toList()),
-              Expanded(
-                  child: TransactionList(_transactions, _deleteTransaction)),
+              TransactionList(_transactions, _deleteTransaction),
               SizedBox(height: 50),
             ],
           ),
